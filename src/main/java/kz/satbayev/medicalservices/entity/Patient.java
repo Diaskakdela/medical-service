@@ -1,14 +1,14 @@
 package kz.satbayev.medicalservices.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 @Entity
-@Table(name = "patients")
 @Data
-public class Patient extends User{
+@DiscriminatorValue("P")
+public class Patient extends Person{
+
+    @Column(columnDefinition = "boolean default false", nullable = false)
+    private boolean isPatientChild;
 
 }

@@ -1,15 +1,16 @@
 package kz.satbayev.medicalservices.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+
+import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
-@Inheritance
-public abstract class User {
+@RequiredArgsConstructor
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -22,4 +23,8 @@ public abstract class User {
 
     private String fullName;
 
+    private Date createdDate;
+
+    @ManyToMany
+    private List<Role> roles;
 }

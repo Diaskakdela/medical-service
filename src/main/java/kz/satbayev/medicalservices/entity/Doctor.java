@@ -1,14 +1,17 @@
 package kz.satbayev.medicalservices.entity;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.OneToMany;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+
+import java.util.List;
 
 @Entity
-@Table(name = "doctors")
 @Data
-public class Doctor extends User{
+@DiscriminatorValue("D")
+public class Doctor extends Person{
 
+    @OneToMany
+    private List<DoctorSpecialization> doctorSpecialization;
 }
