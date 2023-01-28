@@ -5,11 +5,12 @@ import lombok.*;
 
 
 import java.util.Date;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
 @RequiredArgsConstructor
+@Table(name="sys_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,6 +26,6 @@ public class User {
 
     private Date createdDate;
 
-    @ManyToMany
-    private List<Role> roles;
+    @ManyToMany(mappedBy = "users", cascade = CascadeType.ALL)
+    private Set<Role> roles;
 }

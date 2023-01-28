@@ -3,7 +3,7 @@ package kz.satbayev.medicalservices.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -16,5 +16,5 @@ public class Role {
     private String name;
 
     @ManyToMany
-    private List<User> users;
+    private Set<User> users;
 }
