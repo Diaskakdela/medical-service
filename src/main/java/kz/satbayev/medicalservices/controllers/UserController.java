@@ -1,16 +1,13 @@
 package kz.satbayev.medicalservices.controllers;
 
-import kz.satbayev.medicalservices.entity.Role;
 import kz.satbayev.medicalservices.entity.User;
 import kz.satbayev.medicalservices.repository.UserRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@RestController("")
+@CrossOrigin("*")
 public class UserController {
     UserRepository userRepository;
     UserController(UserRepository userRepository){
@@ -18,7 +15,8 @@ public class UserController {
     }
 
     @GetMapping("/users")
-    List<User> all(){
+    List<User> all() throws Exception{
+        Thread.sleep(5);
         return userRepository.findAll();
     }
 

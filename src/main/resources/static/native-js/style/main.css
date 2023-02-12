@@ -1,0 +1,28 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    background: #333333;
+    padding: 10px;
+}
+
+#usersTitle {
+    color: #fff;
+    padding: 20px;
+}
+
+.userCards {
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.userCard {
+    background: #817f7f;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}

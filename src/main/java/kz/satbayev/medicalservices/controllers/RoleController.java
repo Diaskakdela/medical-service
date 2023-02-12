@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 public class RoleController {
-    private RoleRepository roleRepository;
+    private final RoleRepository roleRepository;
 
     RoleController(RoleRepository roleRepository){
         this.roleRepository=roleRepository;
