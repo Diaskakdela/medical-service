@@ -29,4 +29,8 @@ public class AssignmentService {
     public Optional<Assignments> getById(Long id){
         return assignmentsRepository.findById(id);
     }
+
+    public List<Assignments> getByDoctorId(Long doctorId){
+        return assignmentsRepository.findAllByDoctor_Id(doctorId);
+    }
 }

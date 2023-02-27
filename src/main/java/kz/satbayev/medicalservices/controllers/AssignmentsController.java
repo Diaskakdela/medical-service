@@ -37,4 +37,15 @@ public class AssignmentsController {
             throw new RuntimeException("Assignment with given id is not found");
         }
     }
+
+    @GetMapping
+    public ResponseEntity<List<Assignments>> getAssignmentsWithDoctor(@RequestParam Long doctorId){
+        List<Assignments> assignments = assignmentService.getByDoctorId(doctorId);
+        if(!assignments.isEmpty()){
+            return ResponseEntity.ok(assignments);
+        }
+        else{
+            throw new RuntimeException("Assignment not found");
+        }
+    }
 }
