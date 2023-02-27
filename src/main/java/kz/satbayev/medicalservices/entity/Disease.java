@@ -13,6 +13,4 @@ public class Disease {
 
     private String name;
 
-    @ManyToOne
-    private DoctorSpecialization doctorSpecialization;
 }

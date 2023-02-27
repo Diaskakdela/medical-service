@@ -7,7 +7,6 @@ import lombok.Data;
 @Data
 @DiscriminatorValue("P")
 public class Patient extends Person{
-
     @Column(columnDefinition = "boolean default false", nullable = false)
     private boolean isPatientChild;
 

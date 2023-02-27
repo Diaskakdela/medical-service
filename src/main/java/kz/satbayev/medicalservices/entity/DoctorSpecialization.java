@@ -15,9 +15,6 @@ public class DoctorSpecialization {
 
     private String name;
 
-    @ManyToOne
-    private Doctor doctor;
-
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Disease> diseases;
 }
